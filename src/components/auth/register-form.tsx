@@ -37,9 +37,7 @@ export function RegisterForm() {
 			await register(formData);
 			// Redirection is handled by AuthContext or useEffect in page.tsx
 		} catch (err) {
-			setError(
-				err instanceof Error ? err.response.data : "Registration failed"
-			);
+			setError(err instanceof Error ? err.message : "Registration failed");
 		} finally {
 			setLoading(false);
 		}
